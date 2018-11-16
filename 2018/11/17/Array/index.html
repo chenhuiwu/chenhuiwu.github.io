@@ -8,18 +8,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Hexo</title>
+  <title>Array | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以梦为马，明日天涯。。。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="数组基础简介 数组是应用最广泛的数据存储结构。它被植入到大部分编程语言中。在 ECMAScript 中数组是非常常用的引用类型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array">
+<meta property="og:url" content="http://yoursite.com/2018/11/17/Array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="以梦为马，明日天涯。。。">
+<meta property="og:description" content="数组基础简介 数组是应用最广泛的数据存储结构。它被植入到大部分编程语言中。在 ECMAScript 中数组是非常常用的引用类型。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-16T20:06:35.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="以梦为马，明日天涯。。。">
+<meta name="twitter:title" content="Array">
+<meta name="twitter:description" content="数组基础简介 数组是应用最广泛的数据存储结构。它被植入到大部分编程语言中。在 ECMAScript 中数组是非常常用的引用类型。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,76 +162,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Array" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Array
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/17/Array/" class="archive-article-date">
+
+        
+        <a href="/2018/11/17/Array/" class="archive-article-date">
   	<time datetime="2018-11-16T20:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/17/Array/">Array</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组基础"><a href="#数组基础" class="headerlink" title="数组基础"></a>数组基础</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>数组是应用最广泛的数据存储结构。它被植入到大部分编程语言中。在 ECMAScript 中数组是非常常用的引用类型。<br><a id="more"></a></p>
+</blockquote>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><blockquote>
+<p>length<br>length属性表示数组的长度，即其中元素的个数。<br>JavaScript数组的length属性是可变的，当length属性被设置得更大时，整个数组的状态事实上不会发生变化，仅仅是length属性变大；当length属性被设置得比原来小时，则原先数组中索引大于或等于length的元素&gt;的值全部被丢失。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>prototype<br>返回对象类型原型的引用。prototype 属性是 object 共有的。<br>一般用来给数组实例添加方法。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>constructor<br>表示创建对象的函数。<br>说明：constructor 属性是所有具有 prototype 的对象的成员。constructor 属性保存了对构造特定对象实例的函数的引用。</p>
+</blockquote>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
+<li><p>创建数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">JavaScript</span><br><span class="line">// 数组实例的创建</span><br><span class="line">var arr = []</span><br><span class="line">var arr = new Array() //创建一个空数组 []</span><br><span class="line">var arr = new Array(5) //创建一个length为5的数组 [undefined, undefined, undefined, undefined, undefined]</span><br><span class="line">var arr = new Array(1,2,3,4,5) //创建数组并赋值 [1,2,3,4,5]</span><br><span class="line">var arr = Array.of(7);       // 创建数组并赋值 [7] </span><br><span class="line">var arr = Array.of(1, 2, 3); // 创建数组并赋值 [1, 2, 3]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检测数组<br>JavaScript<br>//判断一个对象是不是数组<br>var arr = []</p>
+</li>
+</ul>
+<ol>
+<li>if(arr instanceof Array){} // 方法一</li>
+<li>if(Object.prototype.toString.call(arr) == ‘[object Array]’)}{} // 方法二</li>
+<li>if(Array.isArray(arr)){} //方法三</li>
+<li>if(arr.constructor == Array){} // 方法四<br>数组方法 isArray, from, of<br>Array.isArray(obj)<br>检测对象是否 Array ，是则返回true，否则为false。</li>
+</ol>
+<blockquote>
+<p>Array.from(arrayLike, mapFn, thisArg)<br>该方法从一个类似数组或可迭代对象创建一个新的数组实例。参数 arrayLike 是想要转换成真实数组的类数组对象或可遍历对象。mapFn 是可选参数，如果指定了该参数，则最后生成的数组会经过该函数的加工处理后再返回。thisArg是可选参数，为执行 mapFn 函数时 this 的值。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>所谓类似数组的对象，本质特征只有一点，即必须有length属性。因此，任何有length属性的对象，都可以通过Array.from方法转为数组。<br>实际应用中，常见的类似数组的对象是 DOM 操作返回的 NodeList 集合，以及函数内部的 arguments 对象。</p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/17/Array/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/17/11.17心情记/" class="archive-article-date">
-  	<time datetime="2018-11-16T18:17:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/17/11.17心情记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hello,every day!</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/17/11.17心情记/">hello,every day!</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -253,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
